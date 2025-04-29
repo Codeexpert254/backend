@@ -9,7 +9,7 @@ class WeatherController extends Controller
 {
     public function getWeather(Request $request, $city)
     {
-        $units = $request->query('units', 'metric'); // <-- pick units, default to 'metric'
+        $units = $request->query('units', 'metric'); 
 
         $apiKey = env('OPENWEATHER_API_KEY');
         $response = Http::get('https://api.openweathermap.org/data/2.5/weather', [
@@ -23,7 +23,7 @@ class WeatherController extends Controller
 
     public function getForecast(Request $request, $city)
     {
-        $units = $request->query('units', 'metric'); // again
+        $units = $request->query('units', 'metric'); 
 
         $apiKey = env('OPENWEATHER_API_KEY');
         $response = Http::get('https://api.openweathermap.org/data/2.5/forecast', [
